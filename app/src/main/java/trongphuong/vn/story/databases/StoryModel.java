@@ -1,10 +1,12 @@
 package trongphuong.vn.story.databases;
 
+import java.io.Serializable;
+
 /**
  * Created by trongphuong1011 on 6/17/2017.
  */
 
-public class StoryModel {
+public class StoryModel implements Serializable{
     private int id;
     private String image;
     private String title;

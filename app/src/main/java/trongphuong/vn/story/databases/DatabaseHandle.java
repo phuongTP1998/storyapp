@@ -1,5 +1,6 @@
 package trongphuong.vn.story.databases;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -51,5 +52,16 @@ public class DatabaseHandle {
             cursor.moveToNext();
         }
         return storyModelList;
+    }
+    public void setBookmark(boolean isBookmark, StoryModel storyModel){
+        storyDatabase = myDatabase.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        if(isBookmark){
+            contentValues.put("bookmark" , 1);
+        } else{
+            contentValues.put("bookmark" , 0);
+        }
+        storyDatabase.update("tbl_short_story", contentValues, "id = " + storyModel.getId(),null);
     }
 }

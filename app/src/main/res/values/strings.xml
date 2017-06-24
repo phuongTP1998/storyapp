@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Story</string>
+    <string name="story_model_name">storyModel</string>
 </resources>
