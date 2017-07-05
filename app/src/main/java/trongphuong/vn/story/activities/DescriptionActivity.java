@@ -13,8 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import trongphuong.vn.story.R;
+import trongphuong.vn.story.adapters.ViewPagerAdapter;
 import trongphuong.vn.story.databases.DatabaseHandle;
 import trongphuong.vn.story.databases.StoryModel;
+import trongphuong.vn.story.fragments.PageFragment;
 
 /**
  * Created by trongphuong1011 on 6/21/2017.
@@ -102,6 +104,12 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void startReading() {
-        startActivity(new Intent(DescriptionActivity.this, DetailActivity.class));
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(ViewPagerAdapter.STORY_KEY, storyModel);
+
+        Intent intent = new Intent(DescriptionActivity.this, DetailActivity.class);
+        intent.putExtras(bundle);
+
+        startActivity(intent);
     }
 }
