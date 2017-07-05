@@ -6,7 +6,7 @@ import android.widget.ListView;
 
 import trongphuong.vn.story.R;
 import trongphuong.vn.story.databases.DatabaseHandle;
-import trongphuong.vn.story.databases.StoryAdapter;
+import trongphuong.vn.story.adapters.StoryAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.toString();

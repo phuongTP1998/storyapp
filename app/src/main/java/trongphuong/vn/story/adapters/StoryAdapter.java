@@ -1,9 +1,10 @@
-package trongphuong.vn.story.databases;
+package trongphuong.vn.story.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
@@ -21,6 +22,7 @@ import java.util.List;
 
 import trongphuong.vn.story.R;
 import trongphuong.vn.story.activities.DescriptionActivity;
+import trongphuong.vn.story.databases.StoryModel;
 
 /**
  * Created by trongphuong1011 on 6/17/2017.
@@ -70,6 +72,14 @@ public class StoryAdapter extends ArrayAdapter<StoryModel>{
                 context.startActivity(intent);
             }
         });
+
+        View view = convertView.findViewById(R.id.v_color);
+        if(storyModel.isBookmark()){
+            view.setBackgroundColor(Color.parseColor("#FF7819"));
+        } else {
+            view.setBackgroundColor(Color.parseColor("#00A5B2"));
+        }
+
 
         return convertView;
     }

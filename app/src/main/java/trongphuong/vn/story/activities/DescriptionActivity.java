@@ -1,5 +1,6 @@
 package trongphuong.vn.story.activities;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -85,6 +86,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 setBookmark();
                 break;
         }
+
     }
 
     private void setBookmark() {
@@ -100,5 +102,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void startReading() {
+        startActivity(new Intent(DescriptionActivity.this, DetailActivity.class));
     }
 }
